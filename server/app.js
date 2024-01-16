@@ -12,6 +12,7 @@ app.use('*',(req,res,next)=>{
     res.write('ping/pong');
 
 })
+
 app.use(errorMiddleware);
 
 

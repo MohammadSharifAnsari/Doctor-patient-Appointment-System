@@ -6,10 +6,12 @@ async function connectDb(){
     try{
 
         await mongoose.connect(`${process.env.DB_URL}`);
+        console.log(`You are now connected to database exist on  ${process.env.DB_URL} `)
     }
     catch(err){
 
-       return new appError(err.message,400);
+        console.log("ERROR in connected to database",err);
+    process.exit(1);
         
     }
 
