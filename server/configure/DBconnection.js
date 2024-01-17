@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
-import appError from "../Utils/Error.utils";
+import appError from "../Utils/Error.utils.js";
 
 async function connectDb(){
 
     try{
 
-        await mongoose.connect(`${process.env.DB_URL}`);
-        console.log(`You are now connected to database exist on  ${process.env.DB_URL} `)
+        const connection=await mongoose.connect(process.env.DB_URL);
+        console.log(`You are now connected to database exist on `,connection.connection.host)
     }
     catch(err){
 

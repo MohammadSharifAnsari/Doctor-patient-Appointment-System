@@ -1,7 +1,7 @@
 app.use(path,middileware functions)=>isme app.use() ki khasiyat yeh hoti hai ki yeh path and same extensible path sabhi pe work karta hai
 example=>A route will match any path that follows its path immediately with a “/”. For example: app.use('/apple', ...) will match “/apple”, “/apple/images”, “/apple/images/news”, and so on.
 src=https://expressjs.com/en/4x/api.html#path-examples
-
+it works for all get put post delete requests
 ---------------------------------------------------------------------------
 
 
@@ -21,4 +21,13 @@ app.listen([port[, host[, backlog]]][, callback])
 Binds and listens for connections on the specified host and port. This method is identical to Node’s http.Server.listen().
 
 If port is omitted or is 0, the operating system will assign an arbitrary unused port, which is useful for cases like automated tasks (tests, etc.).
+-----------------------------------------------------------------
+The app.all() function is used to route all types of HTTP requests. Like if we have POST, GET, PUT, DELETE, etc, requests made to any specific route, let’s say /user, so instead of defining different APIs like app.post(‘/user’), app.get(‘/user’), etc, we can define single API app.all(‘/user’) which will accept all type of HTTP request. 
 
+Syntax:
+
+app.all( path, callback )
+Parameters:
+
+Path: It is the path for which the middleware function is called.
+Callback: It can be a middleware function or a series/array of functions.
