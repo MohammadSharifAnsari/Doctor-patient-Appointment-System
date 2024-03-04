@@ -130,3 +130,19 @@ app.listen(port, () => {
 It will send {} after you click submit. But if you uncommented app.use(express.urlencoded({extended: false})), then you will get {"username": "dean"}.
 
 So the difference is express.json() is a body parser for post request except html post form and express.urlencoded({extended: false}) is a body parser for html post form.
+_____________________________________________________________________________________________________________________
+
+current project me folder bnakar us folder me file or picture store larne ka kaam multer me disc storage karta hai
+
+  storage: multer.diskStorage({//storage bta rha ki yeh kahan store hone wala hai
+    destination: "uploads/",//uploads me store hone wala hai
+    filename: (_req, file, cb) => {
+      cb(null, file.originalname);//jis filename se uploads kiya hai usi file se upload hoga
+    },
+  }),
+  ___________________________________________________________________________________________________________________
+
+arrow function ke andar this use nhi karna chahiye it gives some error or not work properly
+  ()=>{
+
+  }

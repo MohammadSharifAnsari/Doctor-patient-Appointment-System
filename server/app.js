@@ -35,15 +35,15 @@ app.use('/api/v1/cart',cartRoutes);
 app.use('/api/v1/payment',paymentRoutes);
 
 
-app.all('*',(req,res,next)=>{
 
-    res.send('ping/pong');
-
-
+app.all('/ping',(req,res,next)=>{
+  
+  res.send('ping/pong');
+  
+  
 })
 
 app.use(errorMiddleware);
-
 
 
 export default app;

@@ -4,8 +4,9 @@ function errorMiddleware(err,req,res,next){
 
     const statusCode=err.errorStatus||500;
 const message=err.errorMessage||"Something went wrong";
-
-return res.staus(statusCode).json({
+console.log("type",typeof(err.stack))
+console.log("error.stack",err.stack);
+return res.status(statusCode).json({
     success:false,
     message:message,
     Stack:err.stack
